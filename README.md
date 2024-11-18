@@ -9,4 +9,6 @@ Currently under progress, this approach has been able to achieve a near-real-tim
 - [Example video - with expressions](https://youtube.com/shorts/bM_8sR366X4)
 
 These sample videos will provide an idea about the current status of the research project. 
-![Misty being cute](./Misty_being_cute.HEIC)
+<div style="text-align: center;">
+  <img src="./Misty_being_cute.HEIC" alt="Misty being cute" style="width: 50%; height: auto;">
+</div>
