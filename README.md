@@ -10,8 +10,8 @@ TheraMisty is a cutting-edge social robot equipped with multimodal capabilities,
   - [Setup Instructions](#setup-instructions)
 - [Usage](#usage)
   - [Operating TheraMisty](#operating-theramisty)
-- [Technologies Used](#technologies-used)
 - [Configuration](#configuration)
+- [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -27,7 +27,9 @@ TheraMisty is a cutting-edge social robot equipped with multimodal capabilities,
 
 ## Demo
 
-*(Include screenshots or a link to a video demonstration of TheraMisty in action.)*
+- [Example video - without expressions](https://www.youtube.com/watch?v=ZXgYyf2mxcU)  
+  MISTY's response latency decreases as the conversation goes on.
+- [Example video - with expressions](https://youtube.com/shorts/bM_8sR366X4)
 
 ## Installation
 
@@ -77,10 +79,6 @@ Before installing TheraMisty, ensure that your system meets the following requir
 6. **Connect to Misty**
    Ensure that your Misty robot is connected to the same network and accessible via the IP address specified in the .env file.
 
-   
-
-Apologies for the confusion earlier. Below are the **Configuration** and **Technologies Used** sections formatted correctly in Markdown. You can directly add these sections to your `README.md` file.
-
 ---
 
 ## Configuration
@@ -92,7 +90,7 @@ The `Config` class within the `TheraMisty.py` script centralizes all configurabl
 - **`MAIN_CACHE_DIR`**
   - **Type:** `str`
   - **Description:** Specifies the main directory for caching models. This is where pre-trained models are stored to avoid repeated downloads.
-  - **Default Value:** `"/home/dgusain/misty/Huggingface/"`
+  - **Default Value:** `"/home/user/misty/Huggingface/"`
 
 - **`MODEL_NAME`**
   - **Type:** `str`
@@ -107,12 +105,7 @@ The `Config` class within the `TheraMisty.py` script centralizes all configurabl
 - **`AUDIO_SAVE_PATH`**
   - **Type:** `str`
   - **Description:** Path where captured audio files from user interactions are saved.
-  - **Default Value:** `"/home/dgusain/misty/Python-SDK/mistyPy/misty_user_recording.wav"`
-
-- **`VOSK_MODEL_PATH`**
-  - **Type:** `str`
-  - **Description:** Path to the Vosk speech recognition models. *(Note: Vosk is currently commented out in the code but can be integrated for offline speech recognition.)*
-  - **Default Value:** `"model"`
+  - **Default Value:** `"/home/user/misty/Python-SDK/mistyPy/misty_user_recording.wav"`
 
 ### Robot Configuration
 
@@ -214,9 +207,6 @@ TheraMisty integrates a suite of advanced technologies and libraries to deliver 
 - **[Google Speech Recognition](https://cloud.google.com/speech-to-text)**
   - **Purpose:** Transcribes user speech into text, enabling TheraMisty to understand and respond to verbal inputs.
 
-- **[SpeechRecognition](https://pypi.org/project/SpeechRecognition/)**
-  - **Purpose:** Python library that facilitates speech-to-text conversion, acting as an interface to various speech recognition APIs, including Google’s.
-
 ### **Natural Language Processing (NLP)**
 
 - **[Meta LLaMA Models](https://huggingface.co/meta-llama)**
@@ -284,11 +274,4 @@ TheraMisty integrates a suite of advanced technologies and libraries to deliver 
 *By leveraging these technologies, TheraMisty achieves a harmonious blend of robotics, natural language processing, and real-time interaction capabilities, providing users with an engaging and supportive therapeutic experience.*
 
 ---
-
-Feel free to copy and paste these sections into your `README.md`. If you need further assistance or additional sections, don't hesitate to ask!
-
-
-- [Example video - without expressions](https://www.youtube.com/watch?v=ZXgYyf2mxcU)  
-  MISTY's response latency decreases as the conversation goes on.
-- [Example video - with expressions](https://youtube.com/shorts/bM_8sR366X4)
 
