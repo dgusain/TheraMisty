@@ -241,29 +241,6 @@ TheraMisty integrates a suite of advanced technologies and libraries to deliver 
 - **[Flash Attn Interface (`flash_attn_func`)](https://github.com/HazyResearch/flash-attention)**
   - **Purpose:** Interface to integrate Flash Attention into the existing transformer models, enhancing their efficiency and performance.
 
-### **Utility Libraries**
-
-- **[os](https://docs.python.org/3/library/os.html)**
-  - **Purpose:** Facilitates interaction with the operating system, handling tasks like directory creation and environment variable management.
-
-- **[re](https://docs.python.org/3/library/re.html)**
-  - **Purpose:** Provides regular expression matching operations, useful for parsing and processing text data.
-
-- **[time](https://docs.python.org/3/library/time.html)**
-  - **Purpose:** Manages timing operations, including delays and performance measurements.
-
-- **[json](https://docs.python.org/3/library/json.html)**
-  - **Purpose:** Handles JSON data parsing and serialization, essential for API interactions and data storage.
-
-- **[gc (Garbage Collection)](https://docs.python.org/3/library/gc.html)**
-  - **Purpose:** Manages memory by cleaning up unused objects, ensuring efficient resource utilization.
-
-- **[logging](https://docs.python.org/3/library/logging.html)**
-  - **Purpose:** Enables configurable logging, allowing different levels of message severity and formats.
-
-- **[typing](https://docs.python.org/3/library/typing.html)**
-  - **Purpose:** Provides type hints, improving code readability and maintainability.
-
 ### **Concurrency and Asynchronous Operations**
 
 - **[Threading (`Timer`)](https://docs.python.org/3/library/threading.html#timer-objects)**
