@@ -76,6 +76,9 @@ Before installing TheraMisty, ensure that your system meets the following requir
 6. **Connect to Misty**
    Ensure that your Misty robot is connected to the same network and accessible via the IP address specified in the .env file.
 
+7. **Run code**
+   ```bash
+   python connect_llama_flash_attn.py
 ---
 
 ## Configuration
