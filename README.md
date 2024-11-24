@@ -23,7 +23,7 @@ TheraMisty is a cutting-edge social robot equipped with multimodal capabilities,
 - **Expandable:** Easily integrates additional functionalities and can be customized to suit various therapeutic needs.
 
 ## Demo
-
+<img src="misty.gif" alt="Misty GIF" height="300" width="200" />
 - [Example video - without expressions](https://www.youtube.com/watch?v=ZXgYyf2mxcU)  
   MISTY's response latency decreases as the conversation goes on.
 - [Example video - with expressions](https://youtube.com/shorts/bM_8sR366X4)
