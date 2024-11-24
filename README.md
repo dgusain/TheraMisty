@@ -202,49 +202,10 @@ TheraMisty integrates a suite of advanced technologies and libraries to deliver 
 - **[Misty Robotics](https://www.mistyrobotics.com/)**
   - **Purpose:** Provides the platform and SDK (`mistyPy`) for controlling and interfacing with the Misty robot. Enables network communication, event handling, and action execution.
 
-### **Speech Recognition and Processing**
-
-- **[Google Speech Recognition](https://cloud.google.com/speech-to-text)**
-  - **Purpose:** Transcribes user speech into text, enabling TheraMisty to understand and respond to verbal inputs.
-
-### **Natural Language Processing (NLP)**
-
-- **[Meta LLaMA Models](https://huggingface.co/meta-llama)**
-  - **Purpose:** Provides the language models (`Llama-3.2-1B-Instruct`, etc.) used by TheraMisty to generate human-like responses based on user inputs.
-
-- **[Transformers](https://huggingface.co/transformers/)**
-  - **Purpose:** Hugging Face’s library for state-of-the-art NLP models, enabling easy integration and deployment of models like LLaMA for text generation.
-
-### **Deep Learning Frameworks**
-
-- **[Torch (PyTorch)](https://pytorch.org/)**
-  - **Purpose:** Deep learning framework used for model training, optimization, and inference. Facilitates GPU acceleration and efficient computation.
-
-- **[Flash Attention](https://github.com/HazyResearch/flash-attention)**
-  - **Purpose:** An optimized attention mechanism that enhances the performance of transformer models by reducing memory usage and increasing speed during attention computations.
-
-### **API and Networking**
-
-- **[Requests](https://docs.python-requests.org/en/latest/)**
-  - **Purpose:** Simplifies HTTP requests for downloading audio files, interacting with APIs, and managing network communications between TheraMisty and external services.
-
-### **Logging and Monitoring**
-
-- **[Logging (Python’s built-in `logging` module)](https://docs.python.org/3/library/logging.html)**
-  - **Purpose:** Facilitates tracking of events, errors, and informational messages, aiding in debugging and monitoring the system’s performance.
-
 ### **Additional Libraries**
 
 - **[mistyPy](https://github.com/mistyrobotics/mistyPy)**
   - **Purpose:** Python SDK specifically designed for interacting with Misty robots, enabling control over movements, speech, and other robotic functions.
-
-- **[Flash Attn Interface (`flash_attn_func`)](https://github.com/HazyResearch/flash-attention)**
-  - **Purpose:** Interface to integrate Flash Attention into the existing transformer models, enhancing their efficiency and performance.
-
-### **Concurrency and Asynchronous Operations**
-
-- **[Threading (`Timer`)](https://docs.python.org/3/library/threading.html#timer-objects)**
-  - **Purpose:** Implements timers to handle asynchronous events and timeouts, ensuring the robot responds appropriately within specified durations.
 
 ---
 
