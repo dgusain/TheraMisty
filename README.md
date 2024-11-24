@@ -12,9 +12,6 @@ TheraMisty is a cutting-edge social robot equipped with multimodal capabilities,
   - [Operating TheraMisty](#operating-theramisty)
 - [Configuration](#configuration)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Features
 
