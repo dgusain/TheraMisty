@@ -75,7 +75,7 @@ if __name__ == "__main__":
     img_time = time.time() - start_time
 
     # Define the prompt
-    prompt = "<|image|><|begin_of_text|>What does this image represent?"
+    prompt = "<|image|><|begin_of_text|>What am I doing take pic"
     start_time = time.time()
     # Process the inputs
     inputs = processor(
