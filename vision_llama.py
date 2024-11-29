@@ -22,7 +22,7 @@ from threading import Timer
 # Configuration Constants
 class Config:
     MAIN_CACHE_DIR: str = "/home/dgusain/misty/Huggingface/"  # Main cache directory
-    MODEL_NAME: str = "meta-llama/Llama-3.2-1B-Instruct"  # Updated model name
+    MODEL_NAME: str = "meta-llama/Llama-3.2-11B-Vision-Instruct"  # Updated model name
     LOCAL_MODEL_DIR: str = os.path.join(MAIN_CACHE_DIR, MODEL_NAME)  # Derived local model directory
     AUDIO_SAVE_PATH: str = "/home/dgusain/misty/Python-SDK/mistyPy/misty_user_recording.wav"
     IMAGE_SAVE_PATH: str = "/home/dgusain/misty/Python-SDK/mistyPy/user_pic.jpg"
@@ -42,6 +42,7 @@ class Config:
     expressions = {"excite","sad","hug","think","listen","grief","confused","sleep","surprise","love","dizzy","suspicious","correct","admire","worry","scold","blink","fear"}
     char_rate = 17
     img_flag = False
+    imag = None
 
 # Initialize Logging
 logging.basicConfig(level=Config.LOG_LEVEL, format=Config.LOG_FORMAT)
@@ -141,7 +142,7 @@ class MistyAssistant:
             return ""
 
     @staticmethod
-    def apply_chat_template(messages: List[Dict[str, str]]) -> str:
+    def apply_chat_template(messages: List[Dict[str, str]],img_flag) -> str:
         role_map = {
             "system": "System",
             "user": "User",
@@ -153,25 +154,32 @@ class MistyAssistant:
             content = message.get("content", "")
             prefix = role_map.get(role, "User")
             formatted_messages += f"{prefix}: {content}\n"
+        '''
+        if img_flag:
+            formatted_messages = "<|image|><|begin_of_text|>\n" + formatted_messages
+        '''
+        formatted_messages += "Misty: "
         return formatted_messages
 
     def generate_response_transformers(self) -> str:
         try:
-            formatted_prompt = self.apply_chat_template(self.messages)
+            formatted_prompt = self.apply_chat_template(self.messages, img_flag=Config.img_flag)
             logger.debug("Formatted prompt for model:\n%s", formatted_prompt)
             logger.info("Generating response...")
             if Config.img_flag:
-                image = Image.open(Config.IMAGE_SAVE_PATH).convert("RGB")
+                #image = Image.open(Config.IMAGE_SAVE_PATH).convert("RGB")
                 inputs = self.processor(
-                    image,
-                    formatted_prompt,
+                    images=Config.imag,
+                    text=formatted_prompt,
                     return_tensors="pt",
+                    padding=True,
                     truncation=True,
                     max_length=Config.MAX_INPUT_LENGTH
                 ).input_ids.to(self.device)
+                Config.img_flag = False
             else:
                 inputs = self.processor(
-                    formatted_prompt,
+                    text=formatted_prompt,
                     return_tensors="pt",
                     truncation=True,
                     max_length=Config.MAX_INPUT_LENGTH
@@ -184,8 +192,6 @@ class MistyAssistant:
                 do_sample=True,
                 top_p=Config.TOP_P,
                 top_k=Config.TOP_K,
-                eos_token_id=self.processor.eos_token_id,
-                pad_token_id=self.processor.eos_token_id
             )
             response = self.processor.decode(outputs[0], skip_special_tokens=True)
             logger.debug("Raw Generated response: %s", response)
@@ -237,6 +243,7 @@ class MistyAssistant:
             response.raise_for_status()  
             image = Image.open(io.BytesIO(response.content)).convert("RGB")
             image.save(Config.IMAGE_SAVE_PATH)
+            Config.imag = image
             print(f"Image successfully downloaded and saved as {Config.IMAGE_SAVE_PATH}")
         except requests.exceptions.Timeout:
             print(f"Error: The request timed out after {timeout} seconds.")
@@ -329,7 +336,7 @@ class MistyAssistant:
             self.load_model()
             self.misty = Robot(Config.MISTY_IP)
             logger.info("Connected to Misty at %s", Config.MISTY_IP)
-            self.messages.append({"role":"user","content":"introduce yourself"})
+            self.messages.append({"role":"user","content":"introduce yourself as Misty"})
             response = self.generate_response_transformers()          
             self.messages.append({"role": "assistant", "content": response})
             self.misty.speak(response, None, None, None, True, "tts-content")
@@ -366,6 +373,12 @@ class MistyAssistant:
                     if user_text == "did not understand":
                         self.messages.append({"role":"user","content":""})
                     else:
+                        if "photo" in  user_text:
+                            pattern = r'\bphoto\b'
+                            user_text.lower()
+                            clean_text = re.sub(pattern, '', user_text)
+                            user_text = "<|image|><|begin_of_text|>"+clean_text
+                            Config.img_flag = True
                         self.messages.append({"role": "user", "content": user_text})
                     self.timings['Voice transcription'] = time.time() - start_time      
                     logger.info(f"User said: {user_text}")
@@ -375,11 +388,12 @@ class MistyAssistant:
                     self.misty.speak("Pardon me, there was a glitch in my processing. Can you please repeat?",None, None, None, True, "tts-content")
                     time.sleep(68/Config.char_rate) # placeholder for above response
                     continue
-                if "thank you" in user_text:
+                if "satisfied with my care" in user_text:
                     logger.info("Ending conversation")
                     break
-                if "take my picture" in user_text:
+                if Config.img_flag:
                     logger.info("Capturing pic")
+                    self.perform_action("body-reset")
                     im_st = time.time()
                     self.download_image()
                     Config.img_flag = True
@@ -437,7 +451,7 @@ class MistyAssistant:
                 time.sleep(duration_speaking-seconds_done-2)
                 if self.ind > 1:
                     self.perform_action(action="listen")
-            self.misty.perform_action(action="happy")
+            self.perform_action(action="happy")
             self.misty.speak("I am glad to have helped you out today. I hope you have a good day. Take care! Bye!", None, None, None, True, "tts-content")
             self.perform_action(action="body-reset")
 
