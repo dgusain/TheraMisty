@@ -25,7 +25,7 @@ class Config:
     LOCAL_MODEL_DIR: str = os.path.join(MAIN_CACHE_DIR, MODEL_NAME)  # Derived local model directory
     AUDIO_SAVE_PATH: str = "/home/dgusain/misty/Python-SDK/mistyPy/misty_user_recording.wav"
     VOSK_MODEL_PATH: str = "model"
-    MISTY_IP: str = "67.20.198.10"
+    MISTY_IP: str = "67.20.203.98"
     AUDIO_URL: str = f"http://{MISTY_IP}/api/audio?fileName=capture_Dialogue.wav&base64=false"
     LOG_LEVEL: int = logging.INFO
     LOG_FORMAT: str = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
