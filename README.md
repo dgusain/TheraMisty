@@ -33,10 +33,10 @@ TheraMisty is a cutting-edge social robot equipped with multimodal capabilities,
 <div align="center">
   <img src="misty_intro_git.gif" alt="Misty Introduction GIF" width="600" />
 </div>
-Misty communicating without expressions: <a href="https://www.youtube.com/watch?v=ZXgYyf2mxcU" target="_blank">
+- Misty communicating without expressions: <a href="https://www.youtube.com/watch?v=ZXgYyf2mxcU" target="_blank">
   <img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=white" alt="YouTube">
 </a>
-Misty communicating with expressions: <a href="https://youtube.com/shorts/bM_8sR366X4" target="_blank">
+- Misty communicating with expressions: <a href="https://youtube.com/shorts/bM_8sR366X4" target="_blank">
   <img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=white" alt="YouTube">
 </a>
 
