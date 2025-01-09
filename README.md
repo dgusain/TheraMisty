@@ -30,20 +30,15 @@ TheraMisty is a cutting-edge social robot equipped with multimodal capabilities,
 - Performed zero shot evaluation for finetuned models with speech language pathologists at National AI Institute and with GPT-4o. 
 
 ## Demo
-### Without expressions
-<a href="https://www.youtube.com/watch?v=ZXgYyf2mxcU" target="_blank">
-  <img src="https://img.youtube.com/vi/ZXgYyf2mxcU/maxresdefault.jpg" alt="YouTube Video Thumbnail" width="450" height="200"/>
-</a>
-<br/>
+<div align="center">
+  <img src="misty_intro_git.gif" alt="Misty Introduction GIF" width="600" />
+</div>
 Misty communicating without expressions: <a href="https://www.youtube.com/watch?v=ZXgYyf2mxcU" target="_blank">
   <img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=white" alt="YouTube">
 </a>
-
-
-### With expressions
-<div align="center">
-  <iframe width="600" height="400" src="https://youtube.com/shorts/bM_8sR366X4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
+Misty communicating with expressions: <a href="https://youtube.com/shorts/bM_8sR366X4" target="_blank">
+  <img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=white" alt="YouTube">
+</a>
 
 ## Installation
 
