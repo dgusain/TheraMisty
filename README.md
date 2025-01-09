@@ -22,11 +22,23 @@ TheraMisty is a cutting-edge social robot equipped with multimodal capabilities,
 - **Data Privacy:** Processes all operations on a commodity server, ensuring full data privacy and security.
 - **Expandable:** Easily integrates additional functionalities and can be customized to suit various therapeutic needs.
 
+## Current application: 
+### Speech Language Therapy 
+- Provided to children with special needs (autism, dyslexia) with accurate robotic function calling.
+- Employed three Agentic AIs to work in series to develop synthetic data on therapy scene, session planning and therapist conversation alignment. 
+- Finetuned LLaMA language models using PEFT-LoRA configuration, Distributed Data Parallelism, Batchwise Lazy Loading integrated with 4-bit quantization at FP16 across 4 NVIDIA RTX 3090 GPUs.
+- Performed zero shot evaluation for finetuned models with speech language pathologists at National AI Institute and with GPT-4o. 
+
 ## Demo
-<img src="misty.gif" alt="Misty GIF" height="400" width="600" />
-- [Example video - without expressions](https://www.youtube.com/watch?v=ZXgYyf2mxcU)  
-  MISTY's response latency decreases as the conversation goes on.
-- [Example video - with expressions](https://youtube.com/shorts/bM_8sR366X4)
+### Without expressions
+<div align="center">
+  <iframe width="600" height="400" src="https://www.youtube.com/watch?v=ZXgYyf2mxcU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+### With expressions
+<div align="center">
+  <iframe width="600" height="400" src="https://youtube.com/shorts/bM_8sR366X4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
 ## Installation
 
