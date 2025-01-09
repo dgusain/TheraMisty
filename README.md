@@ -31,9 +31,14 @@ TheraMisty is a cutting-edge social robot equipped with multimodal capabilities,
 
 ## Demo
 ### Without expressions
-<div align="center">
-  <iframe width="600" height="400" src="https://www.youtube.com/watch?v=ZXgYyf2mxcU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
+<a href="https://www.youtube.com/watch?v=ZXgYyf2mxcU" target="_blank">
+  <img src="https://img.youtube.com/vi/ZXgYyf2mxcU/maxresdefault.jpg" alt="YouTube Video Thumbnail" width="450" height="200"/>
+</a>
+<br/>
+Misty communicating without expressions: <a href="https://www.youtube.com/watch?v=ZXgYyf2mxcU" target="_blank">
+  <img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=white" alt="YouTube">
+</a>
+
 
 ### With expressions
 <div align="center">
